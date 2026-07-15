@@ -12,7 +12,9 @@ export class DashboardService {
   constructor(private http: HttpClient) {}
 
   getDashboard(): Observable<any> {
+
     return this.http.get<any>(this.apiUrl);
+
   }
 
 }

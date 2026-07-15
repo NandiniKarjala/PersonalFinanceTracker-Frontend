@@ -12,11 +12,35 @@ export class BudgetService {
   constructor(private http: HttpClient) {}
 
   getBudgets(): Observable<any[]> {
+
     return this.http.get<any[]>(this.apiUrl);
+
   }
 
   addBudget(budget: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, budget);
+
+    return this.http.post<any>(
+      this.apiUrl,
+      budget
+    );
+
+  }
+
+  updateBudget(id: number, budget: any): Observable<any> {
+
+    return this.http.put<any>(
+      `${this.apiUrl}/${id}`,
+      budget
+    );
+
+  }
+
+  deleteBudget(id: number): Observable<any> {
+
+    return this.http.delete<any>(
+      `${this.apiUrl}/${id}`
+    );
+
   }
 
 }

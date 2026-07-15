@@ -1,1 +1,63 @@
-<p>login works!</p>
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+
+  <div class="card shadow p-4" style="width: 400px; border-radius:15px;">
+
+    <h2 class="text-center mb-4 text-primary">
+      Personal Finance Tracker
+    </h2>
+
+    <div class="mb-3">
+
+      <label class="form-label">
+        Email
+      </label>
+
+      <input
+        type="email"
+        class="form-control"
+        [(ngModel)]="loginData.email"
+        placeholder="Enter your email"
+        required>
+
+    </div>
+
+    <div class="mb-3">
+
+      <label class="form-label">
+        Password
+      </label>
+
+      <input
+        type="password"
+        class="form-control"
+        [(ngModel)]="loginData.password"
+        placeholder="Enter your password"
+        required>
+
+    </div>
+
+    <button
+      class="btn btn-primary w-100"
+      (click)="login()">
+
+      Login
+
+    </button>
+
+    <hr>
+
+    <p class="text-center mb-0">
+
+      New User?
+
+      <a routerLink="/register">
+
+        Register Here
+
+      </a>
+
+    </p>
+
+  </div>
+
+</div>

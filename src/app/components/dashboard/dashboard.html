@@ -1,1 +1,159 @@
-<p>dashboard works!</p>
+<div class="container mt-4">
+
+    <h2 class="text-center text-primary mb-4">
+        Dashboard
+    </h2>
+
+    <div class="row g-3">
+
+        <!-- Total Income -->
+
+        <div class="col-md-4 d-flex">
+
+            <div class="card text-bg-success shadow w-100">
+
+                <div class="card-body text-center">
+
+                    <h5>Total Income</h5>
+
+                    <h2>₹{{ totalIncome }}</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Total Expense -->
+
+        <div class="col-md-4 d-flex">
+
+            <div class="card text-bg-danger shadow w-100">
+
+                <div class="card-body text-center">
+
+                    <h5>Total Expense</h5>
+
+                    <h2>₹{{ totalExpense }}</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Balance -->
+
+        <div class="col-md-4 d-flex">
+
+            <div class="card text-bg-primary shadow w-100">
+
+                <div class="card-body text-center">
+
+                    <h5>Balance</h5>
+
+                    <h2>₹{{ balance }}</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Total Transactions -->
+
+        <div class="col-md-4 d-flex">
+
+            <div class="card shadow w-100">
+
+                <div class="card-body text-center">
+
+                    <h5>Total Transactions</h5>
+
+                    <h2>{{ totalTransactions }}</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Income Transactions -->
+
+        <div class="col-md-4 d-flex">
+
+            <div class="card shadow w-100">
+
+                <div class="card-body text-center">
+
+                    <h5>Income Transactions</h5>
+
+                    <h2>{{ incomeTransactions }}</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Expense Transactions -->
+
+        <div class="col-md-4 d-flex">
+
+            <div class="card shadow w-100">
+
+                <div class="card-body text-center">
+
+                    <h5>Expense Transactions</h5>
+
+                    <h2>{{ expenseTransactions }}</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Quick Actions -->
+
+    <div class="card shadow mt-4">
+
+        <div class="card-header bg-dark text-white">
+
+            Quick Actions
+
+        </div>
+
+        <div class="card-body text-center">
+
+            <a
+                routerLink="/transactions"
+                class="btn btn-primary m-2">
+
+                Transactions
+
+            </a>
+
+            <a
+                routerLink="/budgets"
+                class="btn btn-success m-2">
+
+                Budgets
+
+            </a>
+
+            <a
+                routerLink="/reports"
+                class="btn btn-warning m-2">
+
+                Reports
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

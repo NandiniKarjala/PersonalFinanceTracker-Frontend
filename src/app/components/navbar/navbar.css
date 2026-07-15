@@ -1,0 +1,45 @@
+.navbar-brand{
+    font-weight:bold;
+    font-size:22px;
+}
+
+.nav-link{
+    color:white !important;
+    margin-right:15px;
+}
+
+.nav-link:hover{
+    color:#ffc107 !important;
+}
+
+button{
+    min-width:90px;
+}
+
+@media (max-width: 991px){
+
+    .navbar-nav{
+
+        text-align:center;
+
+        margin-top:15px;
+
+    }
+
+    .nav-link{
+
+        margin-right:0;
+
+        padding:10px 0;
+
+    }
+
+    button{
+
+        width:100%;
+
+        margin-top:10px;
+
+    }
+
+}

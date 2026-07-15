@@ -1,1 +1,248 @@
-<p>transactions works!</p>
+<div class="container mt-4">
+
+    <h2 class="text-center text-primary mb-4">
+        Transactions
+    </h2>
+
+    <!-- Add Transaction -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-primary text-white">
+
+            Add Transaction
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-3 mb-3">
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Category"
+                        [(ngModel)]="newTransaction.category">
+
+                </div>
+
+                <div class="col-md-3 mb-3">
+
+                    <input
+                        type="number"
+                        class="form-control"
+                        placeholder="Amount"
+                        [(ngModel)]="newTransaction.amount">
+
+                </div>
+
+                <div class="col-md-3 mb-3">
+
+                    <select
+                        class="form-select"
+                        [(ngModel)]="newTransaction.transactionType">
+
+                        <option value="INCOME">Income</option>
+                        <option value="EXPENSE">Expense</option>
+
+                    </select>
+
+                </div>
+
+                <div class="col-md-3 mb-3">
+
+                    <input
+                        type="date"
+                        class="form-control"
+                        [(ngModel)]="newTransaction.date">
+
+                </div>
+
+            </div>
+
+            <div class="mb-3">
+
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Description"
+                    [(ngModel)]="newTransaction.description">
+
+            </div>
+
+            <button
+                class="btn btn-success"
+                (click)="addTransaction()">
+
+                Add Transaction
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Transaction Table -->
+
+    <div class="card shadow">
+
+        <div class="card-header bg-dark text-white">
+
+            Transaction List
+
+        </div>
+
+        <div class="card-body table-responsive">
+
+            <table class="table table-bordered table-hover">
+
+                <thead class="table-primary">
+
+                    <tr>
+
+                        <th>S.No</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th width="170">Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+    <tr *ngIf="transactions.length === 0">
+
+        <td colspan="7" class="text-center text-muted py-4">
+
+            No transactions found.
+            <br>
+            Add your first transaction.
+
+        </td>
+
+    </tr>
+
+    <tr *ngFor="let transaction of transactions; let i = index">
+                        <td>{{ i + 1 }}</td>
+
+                        <td>{{ transaction.category }}</td>
+
+                        <td>₹{{ transaction.amount }}</td>
+
+                        <td>{{ transaction.transactionType }}</td>
+
+                        <td>{{ transaction.description }}</td>
+
+                        <td>{{ transaction.date }}</td>
+
+                        <td>
+
+                            <button
+                                class="btn btn-warning btn-sm me-2"
+                                (click)="editTransaction(transaction)">
+
+                                Edit
+
+                            </button>
+
+                            <button
+                                class="btn btn-danger btn-sm"
+                                (click)="deleteTransaction(transaction.id)">
+
+                                Delete
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="card shadow mt-4" *ngIf="selectedTransaction">
+
+    <div class="card-header bg-warning">
+
+        Edit Transaction
+
+    </div>
+
+    <div class="card-body">
+
+        <div class="row">
+
+            <div class="col-md-3 mb-3">
+
+                <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="selectedTransaction.category">
+
+            </div>
+
+            <div class="col-md-3 mb-3">
+
+                <input
+                    type="number"
+                    class="form-control"
+                    [(ngModel)]="selectedTransaction.amount">
+
+            </div>
+
+            <div class="col-md-3 mb-3">
+
+                <select
+                    class="form-select"
+                    [(ngModel)]="selectedTransaction.transactionType">
+
+                    <option value="INCOME">Income</option>
+                    <option value="EXPENSE">Expense</option>
+
+                </select>
+
+            </div>
+
+            <div class="col-md-3 mb-3">
+
+                <input
+                    type="date"
+                    class="form-control"
+                    [(ngModel)]="selectedTransaction.date">
+
+            </div>
+
+        </div>
+
+        <div class="mb-3">
+
+            <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="selectedTransaction.description">
+
+        </div>
+
+        <button
+            class="btn btn-warning"
+            (click)="updateTransaction()">
+
+            Update Transaction
+
+        </button>
+
+    </div>
+
+</div>

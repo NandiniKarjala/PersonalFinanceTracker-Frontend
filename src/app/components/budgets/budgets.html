@@ -1,1 +1,224 @@
-<p>budgets works!</p>
+<div class="container mt-4">
+
+    <h2 class="text-center text-success mb-4">
+        Budgets
+    </h2>
+
+    <!-- Add Budget -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-success text-white">
+
+            Add Budget
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-3 mb-3">
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Category"
+                        [(ngModel)]="newBudget.category">
+
+                </div>
+
+                <div class="col-md-3 mb-3">
+
+                    <input
+                        type="number"
+                        class="form-control"
+                        placeholder="Monthly Limit"
+                        [(ngModel)]="newBudget.monthlyLimit">
+
+                </div>
+
+                <div class="col-md-3 mb-3">
+
+                    <input
+                        type="number"
+                        class="form-control"
+                        placeholder="Month"
+                        [(ngModel)]="newBudget.month">
+
+                </div>
+
+                <div class="col-md-3 mb-3">
+
+                    <input
+                        type="number"
+                        class="form-control"
+                        placeholder="Year"
+                        [(ngModel)]="newBudget.year">
+
+                </div>
+
+            </div>
+
+            <button
+                class="btn btn-success"
+                (click)="addBudget()">
+
+                Add Budget
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Budget Table -->
+
+    <div class="card shadow">
+
+        <div class="card-header bg-dark text-white">
+
+            Budget List
+
+        </div>
+
+        <div class="card-body table-responsive">
+
+            <table class="table table-bordered table-hover">
+
+                <thead class="table-success">
+
+                    <tr>
+
+                        <th>S.No</th>
+                        <th>Category</th>
+                        <th>Monthly Limit</th>
+                        <th>Month</th>
+                        <th>Year</th>
+                        <th width="170">Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+    <tr *ngIf="budgets.length === 0">
+
+        <td colspan="6" class="text-center text-muted py-4">
+
+            No budgets found.
+            <br>
+            Add your first budget.
+
+        </td>
+
+    </tr>
+
+    <tr *ngFor="let budget of budgets; let i = index">
+
+                        <td>{{ i + 1 }}</td>
+
+                        <td>{{ budget.category }}</td>
+
+                        <td>₹{{ budget.monthlyLimit }}</td>
+
+                        <td>{{ budget.month }}</td>
+
+                        <td>{{ budget.year }}</td>
+
+                        <td>
+
+                            <button
+                                class="btn btn-warning btn-sm me-2"
+                                (click)="editBudget(budget)">
+
+                                Edit
+
+                            </button>
+
+                            <button
+                                class="btn btn-danger btn-sm"
+                                (click)="deleteBudget(budget.id)">
+
+                                Delete
+
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- Edit Budget -->
+
+    <div class="card shadow mt-4" *ngIf="selectedBudget">
+
+        <div class="card-header bg-warning">
+
+            Edit Budget
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-3 mb-3">
+
+                    <input
+                        class="form-control"
+                        type="text"
+                        [(ngModel)]="selectedBudget.category">
+
+                </div>
+
+                <div class="col-md-3 mb-3">
+
+                    <input
+                        class="form-control"
+                        type="number"
+                        [(ngModel)]="selectedBudget.monthlyLimit">
+
+                </div>
+
+                <div class="col-md-3 mb-3">
+
+                    <input
+                        class="form-control"
+                        type="number"
+                        [(ngModel)]="selectedBudget.month">
+
+                </div>
+
+                <div class="col-md-3 mb-3">
+
+                    <input
+                        class="form-control"
+                        type="number"
+                        [(ngModel)]="selectedBudget.year">
+
+                </div>
+
+            </div>
+
+            <button
+                class="btn btn-warning"
+                (click)="updateBudget()">
+
+                Update Budget
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
