@@ -1,23 +1,38 @@
-# 💰 Personal Finance Tracker - Frontend
+# 📸 Application Screenshots
 
-## 📌 Project Overview
+## 🔐 Login
 
-The Personal Finance Tracker Frontend is a modern Angular application that allows users to securely manage their personal finances through an intuitive user interface.
-
-It communicates with the Spring Boot backend using secure REST APIs protected by JWT Authentication.
+![Login](screenshots/Login.png)
 
 ---
 
-## ✨ Features
+## 📝 Register
 
-- User Registration
-- User Login
-- JWT Authentication
-- Route Guard Protection
-- HTTP Interceptor
-- Dashboard
-- Transaction Management
-- Budget Management
+![Register](screenshots/Register.png)
+
+---
+
+## 📊 Dashboard
+
+![Dashboard](screenshots/Dashboard.png)
+
+---
+
+## 💳 Transactions
+
+![Transactions](screenshots/Transactions.png)
+
+---
+
+## 💰 Budgets
+
+![Budgets](screenshots/Budgets.png)
+
+---
+
+## 📈 Reports
+
+![Reports](screenshots/Reports.png)- Budget Management
 - Financial Reports
 - Responsive Navigation Bar
 - Responsive Footer
