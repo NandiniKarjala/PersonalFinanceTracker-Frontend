@@ -1,37 +1,35 @@
----
-
 # 📸 Application Screenshots
 
 ## 🔐 Login
 
-![Login](screenshots/login.png)
+![Login](screenshots/Login.png)
 
 ---
 
 ## 📝 Register
 
-![Register](screenshots/register.png)
+![Register](screenshots/Register.png)
 
 ---
 
 ## 📊 Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/Dashboard.png)
 
 ---
 
 ## 💳 Transactions
 
-![Transactions](screenshots/transactions.png)
+![Transactions](screenshots/Transactions.png)
 
 ---
 
 ## 💰 Budgets
 
-![Budgets](screenshots/budgets.png)
+![Budgets](screenshots/Budgets.png)
 
 ---
 
 ## 📈 Reports
 
-![Reports](screenshots/reports.png)
+![Reports](screenshots/Reports.png)
